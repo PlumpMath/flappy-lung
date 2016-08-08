@@ -1,5 +1,5 @@
 (defproject flappy-bird-demo "0.1.1-SNAPSHOT"
-  :description "The original figwheel flappybird demo"
+  :description "Flappy lung (breathinggames) from figwheel flappybird demo"
   
   :url "http://rigsomelight.com/2014/05/01/interactive-programming-flappy-bird-clojurescript.html"
 
@@ -13,19 +13,19 @@
             [lein-figwheel "0.5.4-7"]]
 
   :clean-targets ^{:protect false} ["resources/public/js/out"
-                                    "resources/public/js/flappy_bird_demo.js"
+                                    "resources/public/js/flappy_lung.js"
                                     :target-path]  
   
   :source-paths ["src"]
 
   :cljsbuild { 
-    :builds [{:id "flappy-bird-demo"
+    :builds [{:id "flappy-lung"
               :source-paths ["src"]
               :figwheel true
               :compiler {
-                         :main flappy-bird-demo.core
+                         :main flappy-lung.core
                          :asset-path "js/out"
-                         :output-to "resources/public/js/flappy_bird_demo.js"
+                         :output-to "resources/public/js/flappy_lung.js"
                          :output-dir "resources/public/js/out"
                          :source-map-timestamp true}}]}
   

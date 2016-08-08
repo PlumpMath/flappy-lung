@@ -1,4 +1,4 @@
-(ns flappy-bird-demo.core
+(ns flappy-lung.core
   (:require
    [cljsjs.react]
    [sablono.core :as sab :include-macros true]
@@ -15,7 +15,7 @@
 
 (def horiz-vel -0.15)
 (def gravity 0.05)
-(def jump-vel 21)
+(def jump-vel 11)
 (def start-y 312)
 (def bottom-y 561)
 (def flappy-x 212)
@@ -79,7 +79,7 @@
 (defn update-pillars [{:keys [pillar-list cur-time] :as st}]
   (let [pillars-with-pos (map #(assoc % :cur-x (curr-pillar-pos cur-time %)) pillar-list)
         pillars-in-world (sort-by
-                          :cur-x 
+                          :cur-x
                           (filter #(> (:cur-x %) (- pillar-width)) pillars-with-pos))]
     (assoc st
       :pillar-list
@@ -118,10 +118,12 @@
       (assoc
           :cur-time timestamp
           :time-delta (- timestamp (:flappy-start-time state)))
+
       update-flappy
       update-pillars
       collision?
-      score))
+      score
+      ))
 
 (defn jump [{:keys [cur-time jump-count] :as state}]
   (-> state
@@ -183,7 +185,7 @@
              [:h1.score score]
              (if-not timer-running
                [:a.start-button {:onClick #(start-game)}
-                (if (< 1 jump-count) "RESTART" "START")]
+                (if (< 1 jump-count) "Lung Restart" "Flappy Lung")]
                [:span])
              [:div (map pillar pillar-list)]
              [:div.flappy {:style {:top (px flappy-y)}}]

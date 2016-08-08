@@ -9,7 +9,7 @@ body {
     width: 480px;
     height: 640px;
     margin:0px auto;
-    background: rgb(112, 197, 206) url(../imgs/background.png) no-repeat left bottom;
+    background: rgb(250, 90, 90) url(../imgs/background.png) no-repeat left bottom;
 }
 
 .board {
@@ -63,8 +63,8 @@ body {
   width: 300px;
   text-align: center;
   left: 90px;
-  font-size: 58px;
-  top: 13px;
+  font-size: 40px;
+  top: 513px;
   color: #fff;
   text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
   z-index: 5;
@@ -72,9 +72,10 @@ body {
 }
 
 .start-button {
-    color: rgb(244,176,36);
+    /* color: rgb(244,176,36); */
     background-color: #fff;
-    font-size: 40px;
+    color: rgb(0,225,200);
+    font-size: 35px;
     z-index: 5;
     position: absolute;
     font-family: monospace;
